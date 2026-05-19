@@ -26,5 +26,4 @@ function App() {
     </PlayerProvider>
   );
 }
-
 export default App;
