@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useEffect, useState } from 'react';
 import { PlayerContext } from '../../context/PlayerContext';
-
+import "./PlayerBar.css"
 const PlayerBar = () => {
   const { currentTrack, isPlaying, volume, nextTrack, prevTrack, setVolume, setIsPlaying } = useContext(PlayerContext);
   const audioRef = useRef(null);
