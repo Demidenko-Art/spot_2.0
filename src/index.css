@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #050507;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Елітна кастомізація повзунків range */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  height: 4px;
+  outline: none;
+  transition: background 0.2s, height 0.2s;
+  cursor: pointer;
+}
+
+input[type="range"]:hover {
+  height: 6px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--accent, #ff1e38);
+  box-shadow: 0 0 10px var(--accent-glow, rgba(255, 30, 56, 0.5));
+  transition: width 0.15s, height 0.15s;
+  cursor: pointer;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+}
+
+/* ===== МОБІЛЬНЕ ПОКРАЩЕННЯ ДЛЯ ВСІХ СЛАЙДЕРІВ ===== */
+@media (max-width: 768px) {
+  input[type="range"] {
+    height: 6px; /* товстіша доріжка для пальця */
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+  }
+  input[type="range"]:hover::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+}
