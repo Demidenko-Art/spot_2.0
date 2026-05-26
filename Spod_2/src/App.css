@@ -1,13 +1,44 @@
-.app-container{
-    width:100%;
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap:wrap;
-    background-color: red
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg:        #0a0a0a;
+  --bg2:       #111111;
+  --bg3:       #1a1a1a;
+  --accent:    #e0001b;
+  --accent-d:  rgba(224,0,27,.12);
+  --accent-g:  rgba(224,0,27,.45);
+  --t1:        #ffffff;
+  --t2:        #888888;
+  --t3:        #555555;
+  --border:    rgba(255,255,255,.07);
+  --navbar-h:  70px;
+  --player-h:  90px;
 }
-.content{
-    width:100%;
-    height:80vh;
-    background-color: green;
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--t1);
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
 }
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: calc(var(--player-h) + var(--navbar-h));
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+.content::-webkit-scrollbar       { width: 3px; }
+.content::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
