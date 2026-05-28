@@ -24,7 +24,6 @@
   background: linear-gradient(to right, rgba(14, 14, 18, 0.85), rgba(255, 30, 56, 0.03));
 }
 
-/* Info Section */
 .pb-info { 
   display: flex; 
   align-items: center; 
@@ -88,7 +87,6 @@
   font-weight: 500;
 }
 
-/* Center Controls */
 .pb-center { 
   flex: 1; 
   display: flex; 
@@ -146,7 +144,6 @@
   background: var(--t1) !important;
 }
 
-/* Progress Bar */
 .pb-progress-row { 
   display: flex; 
   align-items: center; 
@@ -206,7 +203,6 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Right Section (Volume) */
 .pb-right { 
   width: 25%; 
   display: flex; 
@@ -231,8 +227,6 @@
 .volume-slider {
   width: 100%;
 }
-
-/* ===== МОБІЛЬНА АДАПТАЦІЯ ===== */
 @media (max-width: 768px) {
   .player-bar {
     width: calc(100% - 16px);
@@ -260,12 +254,12 @@
     gap: 6px;
   }
   .pb-buttons { gap: 16px; }
-  .pb-btn { width: 32px; height: 32px; } /* більша зона для пальця */
+  .pb-btn { width: 32px; height: 32px; } 
   .pb-play { width: 38px !important; height: 38px !important; }
   .pb-play svg { width: 18px; height: 18px; }
   .pb-progress-row { gap: 8px; }
   .pb-time { font-size: 10px; min-width: 28px; }
-  .pb-right { display: none !important; } /* ховаємо гучність на планшетах/телефонах */
+  .pb-right { display: none !important; } 
   .hide-md { display: none !important; }
 }
 
@@ -283,5 +277,5 @@
   .pb-btn { width: 34px; height: 34px; }
   .pb-play { width: 36px !important; height: 36px !important; }
   .pb-time { font-size: 9px; min-width: 24px; }
-  .pb-track-wrapper { padding: 8px 0; } /* більша область для скрабу */
+  .pb-track-wrapper { padding: 8px 0; } 
 }

@@ -31,7 +31,6 @@
   border: 1px solid var(--border); 
 }
 
-/* Empty Premium State UI */
 .fav-empty {
   display: flex; 
   flex-direction: column; 
@@ -80,7 +79,6 @@
   line-height: 1.5;
 }
 
-/* ===== МОБІЛЬНА АДАПТАЦІЯ ===== */
 @media (max-width: 768px) {
   .fav-page { padding: 30px 16px 10px; }
   .fav-title { font-size: 38px; margin-bottom: 20px; }
