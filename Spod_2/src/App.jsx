@@ -13,6 +13,7 @@ function App() {
     <PlayerProvider>
       <BrowserRouter>
         <div className="app-container">
+          <PlayerBar />
           <main className="content">
             <Routes>
               <Route path="/"          element={<Home />} />
@@ -20,7 +21,6 @@ function App() {
               <Route path="/favorites" element={<Favorites />} />
             </Routes>
           </main>
-          <PlayerBar />
           <Navbar />
         </div>
       </BrowserRouter>
