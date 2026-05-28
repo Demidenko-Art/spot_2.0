@@ -1,27 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg:        #0a0a0a;
-  --bg2:       #111111;
-  --bg3:       #1a1a1a;
-  --accent:    #e0001b;
-  --accent-d:  rgba(224,0,27,.12);
-  --accent-g:  rgba(224,0,27,.45);
-  --t1:        #ffffff;
-  --t2:        #888888;
-  --t3:        #555555;
-  --border:    rgba(255,255,255,.07);
-  --navbar-h:  70px;
-  --player-h:  90px;
+  --bg:         #050507;
+  --bg-glass:   rgba(14, 14, 18, 0.65);
+  --bg2:        #0e0e12;
+  --bg3:        #161622;
+  --accent:     #ff1e38;
+  --accent-glow: rgba(255, 30, 56, 0.35);
+  --accent-d:   rgba(255, 30, 56, 0.08);
+  --accent-g:   rgba(255, 30, 56, 0.25);
+  --t1:         #ffffff;
+  --t2:         #9fa0a6;
+  --t3:         #52535a;
+  --border:     rgba(255, 255, 255, 0.07);
+  --navbar-h:   76px;
+  --player-h:   86px;
+  --premium-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  -webkit-tap-highlight-color: transparent;
+}
 
 body {
   background: var(--bg);
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(255, 30, 56, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(42, 27, 78, 0.15) 0%, transparent 50%);
   color: var(--t1);
   font-family: 'Inter', sans-serif;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .app-container {
@@ -29,16 +41,39 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
+  position: relative;
 }
 
 .content {
   flex: 1;
+  width: 100%;
   overflow-y: auto;
-  padding-bottom: calc(var(--player-h) + var(--navbar-h));
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) transparent;
+  padding-bottom: calc(var(--player-h) + var(--navbar-h) + 20px);
+  scroll-behavior: smooth;
 }
 
-.content::-webkit-scrollbar       { width: 3px; }
-.content::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+/* Кастомізація скроллбару для Webkit */
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+.content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+.content::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ===== МОБІЛЬНА АДАПТАЦІЯ ===== */
+@media (max-width: 768px) {
+  :root {
+    --navbar-h: 68px;  /* трішки менша висота навігації */
+    --player-h: 78px;
+  }
+  .content {
+    padding-bottom: calc(var(--player-h) + var(--navbar-h) + 12px);
+  }
+  .content::-webkit-scrollbar {
+    width: 4px;
+  }
+}

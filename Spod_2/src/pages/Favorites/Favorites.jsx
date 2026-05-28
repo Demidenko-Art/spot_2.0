@@ -12,17 +12,21 @@ export default function Favorites() {
 
       {favorites.length === 0 ? (
         <div className="fav-empty">
-          <span className="fav-empty-icon">♥</span>
+          <div className="fav-premium-circle">
+            <span className="fav-empty-icon">♥</span>
+          </div>
           <p>Тут поки що порожньо</p>
-          <p className="fav-empty-sub">Натисни ♥ біля треку щоб додати</p>
+          <p className="fav-empty-sub">Натисніть серце біля будь-якого треку, щоб сформувати власну преміум-колекцію</p>
         </div>
       ) : (
-        <>
-          <p className="fav-count">{favorites.length} {favorites.length === 1 ? 'трек' : 'треки'}</p>
+        <div className="fav-content-wrapper">
+          <p className="fav-count">Ваша колекція: <span>{favorites.length} {favorites.length === 1 ? 'трек' : 'треків'}</span></p>
           <div className="fav-list">
-            {favorites.map((t, i) => <TrackCard key={t.id} track={t} index={i} />)}
+            {favorites.map((track, i) => (
+              <TrackCard key={track.id} track={track} index={i} />
+            ))}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

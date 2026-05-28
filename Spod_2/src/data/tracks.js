@@ -49,4 +49,4 @@ const tracks = [
   }
 ];
 
-export default tracks;
+export { tracks };
