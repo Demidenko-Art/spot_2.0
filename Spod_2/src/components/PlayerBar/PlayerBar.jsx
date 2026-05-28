@@ -9,8 +9,6 @@ export default function PlayerBar() {
   const [progress, setProgress]       = useState(0);
   const [currentTime, setCurrentTime] = useState('0:00');
   const [duration, setDuration]       = useState('0:00');
-
-  // Якщо трек не вибрано, використовуємо перший за замовчуванням для відображення красивого інтерфейсу
   const activeTrack = currentTrack || tracks[0];
 
   const fmt = s => isNaN(s) ? '0:00' : `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
